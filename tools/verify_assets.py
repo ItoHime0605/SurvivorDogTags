@@ -6,7 +6,8 @@ import json, re, struct, sys
 root = Path(__file__).resolve().parent.parent
 res = root / 'src/main/resources'
 props = (root / 'gradle.properties').read_text()
-assert re.search(r'(?m)^mod_version=\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?
+versions = [line.partition("=")[2].strip() for line in props.splitlines() if line.startswith("mod_version=")]
+assert len(versions) == 1 and re.fullmatch("[0-9]+[.][0-9]+[.][0-9]+-alpha", versions[0]), "Invalid mod version"
 assert 'minecraft_version=1.21.1' in props
 assert 'neo_version=' in props
 for file in res.rglob('*.json'):
