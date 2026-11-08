@@ -1,5 +1,6 @@
 package tw.zonezero.survivordogtags.workbench;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -31,6 +32,13 @@ import net.minecraft.world.phys.BlockHitResult;
  * No persistent block entity: all inputs are returned on GUI close.
  */
 public final class DogTagWorkbenchBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<DogTagWorkbenchBlock> CODEC = simpleCodec(DogTagWorkbenchBlock::new);
+
+    @Override
+    protected MapCodec<DogTagWorkbenchBlock> codec() {
+        return CODEC;
+    }
+
     public DogTagWorkbenchBlock(BlockBehaviour.Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
@@ -70,10 +78,6 @@ public final class DogTagWorkbenchBlock extends HorizontalDirectionalBlock {
         for (int rotation = 1; rotation < SHAPES.length; rotation++) {
             SHAPES[rotation] = rotateShape(north, rotation);
         }
-    }
-
-    private static VoxelShape box(double x1, double y1, double z1, double x2, double y2, double z2) {
-        return Block.box(x1, y1, z1, x2, y2, z2);
     }
 
     /** Rotate bounding boxes around Y; 0=N, 1=E, 2=S, 3=W. */
