@@ -33,9 +33,9 @@ public final class DogTagMaterials {
                 case IRON -> stack.is(Items.IRON_INGOT);
                 case COPPER -> stack.is(Items.COPPER_INGOT);
                 case GOLD -> stack.is(Items.GOLD_INGOT);
-                case ALUMINUM -> stack.is(ALUMINUM) || stack.is(ALUMINIUM) || stack.is(FORGE_ALUMINUM) || stack.is(FORGE_ALUMINIUM);
-                case COBALT -> stack.is(COBALT) || stack.is(FORGE_COBALT);
-                case TUNGSTEN -> stack.is(TUNGSTEN) || stack.is(FORGE_TUNGSTEN);
+                case ALUMINUM -> stack.is(DogTagMaterials.ALUMINUM) || stack.is(ALUMINIUM) || stack.is(FORGE_ALUMINUM) || stack.is(FORGE_ALUMINIUM);
+                case COBALT -> stack.is(DogTagMaterials.COBALT) || stack.is(FORGE_COBALT);
+                case TUNGSTEN -> stack.is(DogTagMaterials.TUNGSTEN) || stack.is(FORGE_TUNGSTEN);
             };
         }
     }
