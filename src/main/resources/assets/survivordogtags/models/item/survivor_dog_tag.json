@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "survivordogtags:item/survivor_dog_tag"
+  }
+}

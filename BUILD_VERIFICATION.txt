@@ -1,0 +1,20 @@
+SurvivorDogTags 0.1.9-alpha | source-only validation | 2026-11-08
+
+PASS: All JSON assets and zh_tw/en_us localization keys parse consistently.
+PASS: Six exact dog-tag upgrade material tables and health/speed/direct physical damage totals.
+PASS: Per-shot TaCZ de-duplication, repeat shots and piercing targets.
+PASS: Four-slot transaction planner, including 80 tungsten + 80 cobalt, and 5,000 randomized cases.
+PASS: Safe profile data, original zombie kill migration, shift-click routing.
+PASS: New headshot multiplier / direct-hit numerical checks (nine pure-Java suites total).
+PASS: Model geometry/4-direction blockstates and source guards for held-item bench access,
+      4-direction selection shape, stale-preview protection and dedicated-server transaction.
+PASS: Java 21 present; independent Java tests and asset script execute.
+
+BLOCKED: No Gradle executable or cached NeoForge dependencies; container DNS cannot
+         resolve services.gradle.org or maven.neoforged.net.
+EXPECTED FAIL: tools/verify_jar.py reports 0 compiled mod jars.
+NOT VERIFIED: Complete mod compilation, client or dedicated-server startup, runtime GUI,
+              Curios equip modifiers, Exposure photo and TaCZ shot interactions.
+
+This archive contains no claimed installable JAR. Build via .github/workflows/build.yml
+on an online GitHub repository, then inspect the build log and verify the JAR.
